@@ -1,0 +1,47 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 27 oct 2024, 13:28:48
+    Author     : nicov
+*/
+
+
+* {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+body{
+    background-image: url(../Imagenes/InicioPrueba.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover ;
+    background-attachment: fixed;
+    max-width: 90%
+}
+.btn-custom2{
+    background-color: #A89078;
+    color: #4B4B4B;
+}
+
+.btn-custom2:hover{
+    background-color: #D8D8D8;
+    color: #A89078;
+}
+
+.btn-custom2:disabled{
+    background-color: #4B4B4B;
+    color: #A89078;
+}
+
+.marco{
+    background-color: rgba(244, 229, 185,0.6);
+    border-radius: 4px;
+    *{
+        text-align: center;
+    }
+}

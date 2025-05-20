@@ -1,0 +1,152 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 11 may 2025, 18:35:39
+    Author     : nicov
+*/
+
+body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #2c3e50;
+            }
+            h1 {
+                text-align: center;
+                color: #95a5a6;
+                margin-bottom: 30px;
+            }
+            .game-container {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+            .game-info {
+                background-color: #ecf0f1;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .score {
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+            }
+            .country-button {
+                background-color: #3498db;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                padding: 10px;
+                font-size: 14px;
+                cursor: pointer;
+                transition: all 0.3s;
+                height: 120px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                text-align: center;
+            }
+            .country-button:hover {
+                background-color: #2980b9;
+                transform: translateY(-2px);
+            }
+            .country-button.selected {
+                background-color: #e74c3c;
+                transform: translateY(-4px);
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            }
+            .country-image {
+                width: 80px;
+                height: 60px;
+                object-fit: cover;
+                border-radius: 4px;
+                margin-bottom: 5px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            }
+            .controls {
+                display: flex;
+                gap: 10px;
+                margin-top: 15px;
+            }
+            .check-button, .new-game {
+                background-color: #2ecc71;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                padding: 12px 25px;
+                font-size: 16px;
+                cursor: pointer;
+                flex: 1;
+                font-weight: bold;
+                transition: all 0.3s;
+            }
+            .check-button:hover, .new-game:hover {
+                background-color: #27ae60;
+                transform: translateY(-2px);
+            }
+            .new-game {
+                background-color: #9b59b6;
+            }
+            .new-game:hover {
+                background-color: #8e44ad;
+            }
+            .check-button:disabled {
+                background-color: #95a5a6;
+                cursor: not-allowed;
+                transform: none;
+            }
+            .solved-groups {
+                margin-top: 20px;
+            }
+            .group {
+                background-color: #1abc9c;
+                color: white;
+                padding: 15px;
+                border-radius: 8px;
+                margin-bottom: 10px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .group-countries {
+                font-weight: bold;
+                margin-bottom: 5px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                align-items: center;
+            }
+            .country-flag {
+                width: 30px;
+                height: 20px;
+                object-fit: cover;
+                border-radius: 2px;
+                margin-right: 5px;
+                vertical-align: middle;
+            }
+            .group-reason {
+                font-style: italic;
+                margin-top: 10px;
+            }
+            .shake {
+                animation: shake 0.5s;
+            }
+            @keyframes shake {
+                0%, 100% {
+                    transform: translateX(0);
+                }
+                10%, 30%, 50%, 70%, 90% {
+                    transform: translateX(-5px);
+                }
+                20%, 40%, 60%, 80% {
+                    transform: translateX(5px);
+                }
+            }

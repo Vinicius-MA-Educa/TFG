@@ -1,0 +1,74 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 22 oct 2024, 0:04:36
+    Author     : nicov
+*/
+
+
+
+
+
+a{
+    color: black; 
+}
+
+
+
+body{
+    background-image: url(../Imagenes/FondoPrueba.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover ;
+    background-attachment: fixed;
+    max-width: 90%
+}
+
+.fondo{
+    background-color: rgba(41,67,92,0.75);
+    border-radius: 7px;
+    label{
+        color: white;
+    }
+    p{
+        color: white;
+    }
+}
+
+.centrado{
+    position: absolute;
+    top: 24%;
+    left: 14%;
+    
+}
+
+.titulo{ 
+    position: absolute;
+    top: 20%;
+    left: 41%;
+}
+
+.btn-custom1{
+    background-color: #457ead;
+    color: black;
+}
+.btn-custom1:hover{
+    background-color: #345f82;
+    color: black;
+}
+.btn-custom1:disabled{
+    background-color: #7b7b7b;
+    color: black;
+}
+
+.btn-custom2{
+    background-color: white;
+    color: #45ADA8 ;
+}
+
+.btn-custom2:hover{
+    background-color: #c3c3c3;
+    color: #45ADA8 ;
+}
