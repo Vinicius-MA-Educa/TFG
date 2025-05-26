@@ -105,7 +105,7 @@ try {
             <div class="grid" id="countriesGrid"></div>
 
             <div class="controls">
-                <form method="POST" id="flagForm" action="Juego3.php"></form>
+                <form method="POST" id="flagForm" action="Juego3Online.php"></form>
                 <button class="check-button" id="checkButton" disabled>Comprobar</button>
                 <a href="Juego3.php?fallo=1"><button class="btn btn-danger" id="ffButton">Rendirse</button></a> 
             </div>

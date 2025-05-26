@@ -1,8 +1,12 @@
 <?php
 
 session_start();
+if(isset($_GET["fallo"]) && !empty($_GET["fallo"])){
+   $_SESSION["Juego3"]=0; 
+}else{
+    $_SESSION["Juego3"]++; // Incrementar racha si es correcto
+}
 
-$_SESSION["Juego3"]++; // Incrementar racha si es correcto
 // Conexión y actualización
 try {
     $pdo = new PDO("mysql:host=localhost;dbname=tfg;charset=utf8", "root", "");

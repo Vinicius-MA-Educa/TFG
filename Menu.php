@@ -9,6 +9,8 @@ $usuario = sacarUsuario($_SESSION['user']);
 $_SESSION["Juego1"] = $usuario["Juego1"];
 $_SESSION["Juego2"] = $usuario["Juego2"];
 $_SESSION["Juego3"] = $usuario["Juego3"];
+
+$multi= tieneMulti($_SESSION['user'])
 ?>
 
 
@@ -60,7 +62,7 @@ $_SESSION["Juego3"] = $usuario["Juego3"];
                 <!-- Tarjeta 1 -->
                 <div class="col">
                     <div class="card text-bg-secondary h-100 text-center p-3"">
-                        <span class="card-badge badge bg-danger rounded-pill"><?php echo $usuario["Juego1"]; ?></span>
+                        <span style="font-size: <?php echo $usuario["Juego1"] * 0.15 + 0.8; ?>rem" class="card-badge badge bg-danger rounded-pill"><?php echo $usuario["Juego1"]; ?></span>
                         <a href="Worled.php" class="text-decoration-none">
                             <div class="card-body">
                                 <div class="card-icon bg-primary bg-opacity-25 text-primary">
@@ -77,7 +79,7 @@ $_SESSION["Juego3"] = $usuario["Juego3"];
                 <!-- Tarjeta 2 -->
                 <div class="col">
                     <div class="card text-bg-secondary h-100 text-center p-3">
-                        <span class="card-badge badge bg-danger rounded-pill"><?php echo $usuario["Juego2"]; ?></span>
+                        <span style="font-size: <?php echo $usuario["Juego2"] * 0.15 + 0.8; ?>rem" class="card-badge badge bg-danger rounded-pill"><?php echo $usuario["Juego2"]; ?></span>
                         <a href="Bandera.php" class="text-decoration-none">
                             <div class="card-body">
                                 <div class="card-icon bg-success bg-opacity-25 text-success">
@@ -94,7 +96,7 @@ $_SESSION["Juego3"] = $usuario["Juego3"];
                 <!-- Tarjeta 3 -->
                 <div class="col">
                     <div class="card text-bg-secondary h-100 text-center p-3">
-                        <span class="card-badge badge bg-danger rounded-pill"><?php echo $usuario["Juego3"]; ?></span>
+                        <span style="font-size: <?php echo $usuario["Juego3"] * 0.15 + 0.8; ?>rem" class="card-badge badge bg-danger rounded-pill"><?php echo $usuario["Juego3"]; ?></span>
                         <a href="Conectar.php" class="text-decoration-none">
                             <div class="card-body">
                                 <div class="card-icon bg-info bg-opacity-25 text-info">
@@ -108,16 +110,23 @@ $_SESSION["Juego3"] = $usuario["Juego3"];
                     </div>
                 </div>
 
-                <!-- Tarjeta 4 -->
+                <!-- Tarjeta Crear. -->
                 <div class="col">
                     <div class="card text-bg-secondary h-100 text-center p-3">
-                        <div class="card-body">
-                            <div class="card-icon bg-danger bg-opacity-25 text-danger">
-                                <i class="bi bi-question-lg"></i>
+                        <a href="MenuOnline.php" class="text-decoration-none">
+                            <div class="card-body">
+                                <div class="card-icon bg-info bg-opacity-25 text-info">
+                                    <i class="bi bi-person-add"></i>
+                                </div>
+                                <h3 class="card-title">Partida versus</h3>
+                                <?php if($multi):?>
+                                <p class="card-text text-muted">Continua la partida con tu amigo</p>
+                                <?php else:?>
+                                <p class="card-text text-muted">Crear una partida con tu amigo</p>
+                                <?php endif;?>
+                                
                             </div>
-                            <h3 class="card-title">???</h3>
-                            <p class="card-text text-light-emphasis">Se esta trabajando en ello</p>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -91,7 +91,7 @@ $pais= paisAleatorio();
         <h1>🌍 Wordle de Países</h1>
         <p>Adivina el país en 6 intentos</p>
         
-        <form method="POST" id="flagForm" action="Juego1.php">
+        <form method="POST" id="flagForm" action="Juego1Online.php">
             <input type="hidden" id="acierto" name="acierto" value="false">
             <div class="mb-3">
                 <input type="text" id="guess" name="guess" placeholder="Tu intento..." />

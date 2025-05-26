@@ -1,5 +1,3 @@
-
-
 const maxAttempts = 3;
 let currentAttempts = 0;
 
@@ -15,6 +13,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Configurar el botón del modal de acierto para enviar formulario
+    const modalButton = document.querySelector('#aciertoModal .btn');
+    if (modalButton) {
+        modalButton.addEventListener('click', function() {
+            // Enviar el formulario cuando se cierre el modal
+            document.getElementById("flagForm").submit();
+        });
+    }
 
     mostrarInstruccionesPrimeraVez();
 });
@@ -42,10 +48,13 @@ function checkAnswer() {
     currentAttempts++;
 
     if (normalizedGuess === normalizedCountryName) {
-        showMessage("✅ ¡Correcto! Es " + countryName, "success");
-
-        // Enviar formulario para actualizar racha
-        flagForm.submit();
+        // Mostrar modal de acierto
+        const modal = new bootstrap.Modal(document.getElementById('aciertoModal'));
+        modal.show();
+        
+        // El formulario se enviará cuando el usuario haga clic en "Volver al menú"
+        // Esto se maneja en el event listener configurado en DOMContentLoaded
+        
     } else {
         const remaining = maxAttempts - currentAttempts;
         attemptsLeft.textContent = remaining;
@@ -53,10 +62,13 @@ function checkAnswer() {
         if (remaining <= 0) {
             // Marcar que es el último intento
             document.getElementById("finalAttempt").value = "true";
+            document.getElementById("checkButton").disabled="true";
             showMessage(`❌ Incorrecto. La respuesta correcta era ${countryName}.`, "danger");
-
+            
             // Enviar formulario para resetear racha
-            flagForm.submit();
+            setTimeout(() => {
+                flagForm.submit();
+            }, 2000); // Esperar 2 segundos para que el usuario vea el mensaje
         } else {
             showMessage(`❌ Incorrecto. Te quedan ${remaining} intento${remaining !== 1 ? 's' : ''}.`, "danger");
         }

@@ -44,7 +44,31 @@ function sacarUsuario($nombre){
     
     return $usuario;
 }
+function sacarUsuarioOnline($nombre){
+    $pdo = getConexion();
+    $stmt = $pdo->prepare("SELECT * FROM versus WHERE Nombre1 = :nombre OR Nombre2 = :nombre");
+    $stmt->execute([':nombre' => $nombre]);
 
+    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    return $usuario;
+}
+
+function tieneMulti($nombre) {
+    $pdo = getConexion();
+    $stmt = $pdo->prepare("SELECT * FROM versus WHERE Nombre1 = :nombre OR Nombre2 = :nombre");
+    $stmt->execute([':nombre' => $nombre]);
+
+    return (bool) $stmt->fetch();
+}
+
+
+function eliminarMulti($nombre) {
+    $pdo = getConexion();
+    $stmt = $pdo->prepare("DELETE FROM versus WHERE Nombre1 = :nombre OR Nombre2 = :nombre");
+    $stmt->execute([':nombre' => $nombre]);
+
+}
 
 // Función para normalizar texto (eliminar acentos)
 function normalizeString($string) {

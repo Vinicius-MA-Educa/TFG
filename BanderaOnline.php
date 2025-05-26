@@ -98,7 +98,7 @@ $nombreNormalizado = normalizeString($pais["nombre"]);
                     </span>
                 </div>
 
-                <form method="POST" id="flagForm" action="Juego2.php">
+                <form method="POST" id="flagForm" action="Juego2Online.php">
                     <div class="mb-3">
                         <input type="text" class="form-control" id="guess" name="guess" placeholder="Escribe el nombre del país..." aria-label="País" autocomplete="off">
                         <input type="hidden" id="finalAttempt" name="final_attempt" value="false">

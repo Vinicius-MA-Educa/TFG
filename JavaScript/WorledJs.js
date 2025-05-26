@@ -76,12 +76,26 @@ function submitGuess() {
     if (Respuesta === Palabra) {
         // Si acierta, cambia el valor de acierto a true
         document.getElementById("acierto").value = "true";
-        alert("🎉 ¡Has adivinado el país!");
-        flagForm.submit();
+        const modalA = new bootstrap.Modal(document.getElementById('aciertoModal'));
+        modalA.show();
+        const modalButton = document.querySelector('#aciertoModal .btn');
+        if (modalButton) {
+            modalButton.addEventListener('click', function () {
+                // Enviar el formulario cuando se cierre el modal
+                document.getElementById("flagForm").submit();
+            });
+        }
     } else if (Intento >= Intentos) {
         // Si se queda sin intentos, mantiene acierto en false
-        alert(`😢 Te has quedado sin intentos. Era: ${Palabra.toUpperCase()}`);
-        flagForm.submit();
+        const modalF = new bootstrap.Modal(document.getElementById('falloModal'));
+        modalF.show();
+        const modalButton = document.querySelector('#falloModal .btn');
+        if (modalButton) {
+            modalButton.addEventListener('click', function () {
+                // Enviar el formulario cuando se cierre el modal
+                document.getElementById("flagForm").submit();
+            });
+        }
     }
 }
 
